@@ -38,7 +38,7 @@ li {
         width: $main-width;
         display: grid;
         margin: 0 auto;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 4fr repeat(2, 1fr);
         grid-template-rows: 1fr;
         align-items: center;
 
@@ -51,7 +51,13 @@ li {
         }
 
         .num-top-header {
+            justify-self: right;
             grid-column: 2/3;
+        }
+
+        .num2-top-header {
+            justify-self: right;
+            grid-column: 3/4;
         }
     }   
 }
@@ -115,6 +121,32 @@ main, .gallery-div {
     position: relative;
     top: -100px;
     border-top-left-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        position: relative;
+        top: 3em;
+        width: 3em;
+        animation-name: bounce;
+        animation-timing-function: ease-in-out;
+        animation-duration: 2000ms;
+        animation-iteration-count: infinite;
+        filter: invert(41%) sepia(96%) saturate(3040%) hue-rotate(353deg) brightness(101%) contrast(99%);;
+    }
+
+    @keyframes bounce {
+        0% {
+            top: 3em;
+        }
+        25% {
+            top: 4em;
+        }
+        50% {
+            top: 3em;
+        }
+        
+    }
 }
 
 .header-img {
@@ -127,6 +159,39 @@ main, .gallery-div {
     position: relative;
     top: -50px;
     z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    .solid-edge-color {
+        grid-row: 1/6;
+        grid-column: 1/2;
+        background-color: $main-color;
+    }
+
+    .soft-edge-color {
+        grid-row: 1/6;
+        grid-column: 2/6;
+        background-image: linear-gradient(to right, $main-color, rgba(0,0,0,0));
+    }
+
+    .gesso-nobre-bkg {
+        z-index: 2;
+        font-size: 42px;
+        font-weight: 200;
+        align-self: center;
+        color: white;
+        grid-row: 2/3;
+        grid-column: 2/5;
+    }
+
+    .gesso-nobre-corpo-bkg {
+        z-index: 2;
+        font-size: 28px;
+        color: white;
+        grid-row: 3/5;
+        grid-column: 2/5;
+    }
 }
 
 .gallery-title {
@@ -291,6 +356,8 @@ div {
 }
 
 
+
+
 .whatsapp {
     padding-right: 2em;
 }
@@ -298,6 +365,21 @@ div {
 .email {
     a span {
         background-color: #25D366;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .wpp-mail {
+        flex-direction: column;
+    }
+
+    .email p:nth-child(1) {
+        padding-top: 2em;
+    }
+
+    .whatsapp {
+        width: 100%;
+        padding-right: 0;
     }
 }
 
@@ -325,10 +407,12 @@ footer {
     max-width: $main-width;
     color: black;
     margin: 0 auto;
+    padding: 1em;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-weight: 100;
+    text-align: center;
     .dev {
         color: black;
     }
