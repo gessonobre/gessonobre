@@ -192,7 +192,20 @@ main, .gallery-div {
         grid-row: 3/5;
         grid-column: 2/5;
     }
+
+    @media screen and (max-width: 425px){
+        .gesso-nobre-bkg {
+            font-size: 38px;
+            grid-column: 2/8;
+        }
+    
+        .gesso-nobre-corpo-bkg {
+            font-size: 24px;
+            grid-column: 2/8;
+        }
+    }
 }
+
 
 .gallery-title {
     width: fit-content;
@@ -262,7 +275,7 @@ div {
 
 .locations {
     text-align: center;
-    padding: 3em;
+    padding: 0;
 
     h2, p {
         margin: 0 auto;
