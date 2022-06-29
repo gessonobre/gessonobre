@@ -162,6 +162,9 @@ main, .gallery-div {
 @media screen and (max-width: 1440px) {
   .header-img {
     height: 550px; } }
+@media screen and (max-width: 425px) {
+  .header-img {
+    height: 420px; } }
 .gallery-title {
   width: fit-content;
   color: #fe5412;
